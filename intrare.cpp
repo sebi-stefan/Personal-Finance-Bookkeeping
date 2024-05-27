@@ -54,3 +54,4 @@ intrare::intrare(string tip, double suma, string tranzactor, string data, string
 
 
 
+

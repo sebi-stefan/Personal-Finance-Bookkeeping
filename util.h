@@ -7,9 +7,9 @@ using namespace std;
 #ifndef CLASEPP_UTIL_H
 #define CLASEPP_UTIL_H
 
+void login(const string& username);
 
-
-
+void listUsernames();
 
 
 

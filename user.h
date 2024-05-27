@@ -11,11 +11,12 @@ using namespace std;
 
 
 class user {
-    vector<intrare> intrari;
+    vector<intrare*> intrari;
 public:
     user(const string& localFilePath, const string& userName);
-
     friend ostream &operator<<(ostream &os, const user &user);
+    void afisareConsola();
+
 };
 
 
