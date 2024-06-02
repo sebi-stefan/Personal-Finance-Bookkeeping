@@ -4,7 +4,7 @@
 #include<iostream>
 #include<filesystem>
 #include <fstream>
-#include "util.h"
+#include "../headers/util.h"
 
 void listUsernames(){
     ifstream in("../user_files/LAST_USER.txt"); //getting current user
@@ -13,7 +13,7 @@ void listUsernames(){
     string path = "../user_files"; //directory of usernames
     getline(in, currentUser);
 
-    for (const auto &entry: std::filesystem::directory_iterator(path)){ // iterates over all files with .csv extention
+    for (const auto &entry: filesystem::directory_iterator(path)){ // iterates over all files with .csv extention
 //        std::cout << entry.path() << std::endl;
         string filepath = entry.path().string();
         if(filepath.find(".csv")!=string::npos){
@@ -46,19 +46,5 @@ void login(const string& username){
             return;
         }
     }
-    //else asks user to create username
-    char createAccount;
-    cout<<"this username does not exist.\ndo you want to create an account using this username ? [y/n]";
-    do{
-        cin>>createAccount;
-    }while(createAccount != 'y' && createAccount != 'n'); //prompt checker
-
-    if(createAccount == 'y'){ //username creation
-        ofstream f("../user_files/"+username+".csv");
-        f.close();
-        cout<<"account created\n";
-        cout<<"logged in as: "<<username;
-    }
-
-
+    cout<<"username not found"<<endl;
 }

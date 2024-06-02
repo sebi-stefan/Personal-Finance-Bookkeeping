@@ -3,10 +3,10 @@ project(ClasePP)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ClasePP main.cpp
-        intrare.cpp
-        intrare.h
-        user.cpp
-        user.h
-        util.cpp
-        util.h)
+add_executable(ClasePP src/main.cpp
+        src/intrare.cpp
+        headers/intrare.h
+        src/user.cpp
+        headers/user.h
+        src/util.cpp
+        headers/util.h)

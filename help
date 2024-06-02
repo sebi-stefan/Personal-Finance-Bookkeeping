@@ -1,0 +1,5 @@
+-login <username> // #login function
+-lu #list usernames
+-add <->*<suma> <tranzactor> <data[dd.mm.yyy]> <categorie>
+-delete <entry number>
+

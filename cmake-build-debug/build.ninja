@@ -49,29 +49,29 @@ cmake_ninja_workdir = /home/sebi/coding/c++_stuff/P2/ClasePP/cmake-build-debug/
 
 build cmake_object_order_depends_target_ClasePP: phony || CMakeFiles/ClasePP.dir
 
-build CMakeFiles/ClasePP.dir/main.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/main.cpp || cmake_object_order_depends_target_ClasePP
-  DEP_FILE = CMakeFiles/ClasePP.dir/main.cpp.o.d
+build CMakeFiles/ClasePP.dir/src/main.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/src/main.cpp || cmake_object_order_depends_target_ClasePP
+  DEP_FILE = CMakeFiles/ClasePP.dir/src/main.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/ClasePP.dir
-  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir/src
 
-build CMakeFiles/ClasePP.dir/intrare.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/intrare.cpp || cmake_object_order_depends_target_ClasePP
-  DEP_FILE = CMakeFiles/ClasePP.dir/intrare.cpp.o.d
+build CMakeFiles/ClasePP.dir/src/intrare.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/src/intrare.cpp || cmake_object_order_depends_target_ClasePP
+  DEP_FILE = CMakeFiles/ClasePP.dir/src/intrare.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/ClasePP.dir
-  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir/src
 
-build CMakeFiles/ClasePP.dir/user.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/user.cpp || cmake_object_order_depends_target_ClasePP
-  DEP_FILE = CMakeFiles/ClasePP.dir/user.cpp.o.d
+build CMakeFiles/ClasePP.dir/src/user.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/src/user.cpp || cmake_object_order_depends_target_ClasePP
+  DEP_FILE = CMakeFiles/ClasePP.dir/src/user.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/ClasePP.dir
-  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir/src
 
-build CMakeFiles/ClasePP.dir/util.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/util.cpp || cmake_object_order_depends_target_ClasePP
-  DEP_FILE = CMakeFiles/ClasePP.dir/util.cpp.o.d
+build CMakeFiles/ClasePP.dir/src/util.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /home/sebi/coding/c++_stuff/P2/ClasePP/src/util.cpp || cmake_object_order_depends_target_ClasePP
+  DEP_FILE = CMakeFiles/ClasePP.dir/src/util.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/ClasePP.dir
-  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ClasePP.dir/src
 
 
 # =============================================================================
@@ -81,7 +81,7 @@ build CMakeFiles/ClasePP.dir/util.cpp.o: CXX_COMPILER__ClasePP_unscanned_Debug /
 #############################################
 # Link the executable ClasePP
 
-build ClasePP: CXX_EXECUTABLE_LINKER__ClasePP_Debug CMakeFiles/ClasePP.dir/main.cpp.o CMakeFiles/ClasePP.dir/intrare.cpp.o CMakeFiles/ClasePP.dir/user.cpp.o CMakeFiles/ClasePP.dir/util.cpp.o
+build ClasePP: CXX_EXECUTABLE_LINKER__ClasePP_Debug CMakeFiles/ClasePP.dir/src/main.cpp.o CMakeFiles/ClasePP.dir/src/intrare.cpp.o CMakeFiles/ClasePP.dir/src/user.cpp.o CMakeFiles/ClasePP.dir/src/util.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/ClasePP.dir
   POST_BUILD = :

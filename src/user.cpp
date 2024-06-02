@@ -4,11 +4,15 @@
 #include<iostream>
 #include<fstream>
 #include <iomanip>
-#include "user.h"
+#include "../headers/user.h"
 
-user::user(const std::string& localFilePath, const std::string& userName) { //user from csv file
-    if(localFilePath.find(userName) != std::string::npos){
-        std::ifstream file(localFilePath);
+user::user() { //user from csv file
+    ifstream f("../user_files/LAST_USER.txt");
+    string currentUser;
+    getline(f, currentUser);
+    string userFilePath = "../user_files/" + currentUser + ".csv";
+    if(userFilePath.find(currentUser+".csv") != string::npos){
+        ifstream file(userFilePath);
         string linieIntrare;
         if(file.is_open()){
             while(getline(file, linieIntrare)){
@@ -18,13 +22,13 @@ user::user(const std::string& localFilePath, const std::string& userName) { //us
         }
     }
     else{
-        std::cout<<"error: UserNotFound or FileNotFound";
+        cout<<"error: UserNotFound or FileNotFound";
     }
 }
 
 ostream &operator<<(ostream &os, const user &user) { // scriere user csv style
     for(intrare* e: user.intrari){
-        cout<<e;
+        cout<<*e;
     }
     return os;
 }
@@ -35,7 +39,7 @@ void user::afisareConsola() {
     unsigned int maxLengthTranzactor = 0;
     unsigned int maxLengthData = 0;
     unsigned int maxLengthCategorie = 0;
-    for(intrare* e:this->intrari){
+    for(intrare* e:this->intrari){ // gets maxLength of every attribute
         if(maxLengthTip < e->getTip().size()){
             maxLengthTip = e->getTip().size();
         }
@@ -53,17 +57,7 @@ void user::afisareConsola() {
         }
     }
 
-//    string tipSpaces(maxLengthTip, ' ');
-//    string sumaSpaces(maxLengthSuma, ' ');
-//    string tranzactorSpaces(maxLengthTranzactor, ' ');
-//    string dataSpaces(maxLengthData, ' ');
-//    string categorieSpaces(maxLengthCategorie, ' ');
-//    cout<<"   "<<"Tip"<<tipSpaces<<" "<<"Suma"<<sumaSpaces<<" "<<"Tranzactor"<<tranzactorSpaces<<" "<<"Data"<<dataSpaces<<" "<<"Categorie"<<endl;
-//    cout<<endl;
-//    for(int i = 0; i<this->intrari.size();i++){
-//        cout<<i+1<<". "<<this->intrari[i]->getTip()<<tipSpaces<<" "<<this->intrari[i]->getSuma()<<sumaSpaces<<" "<<this->intrari[i]->getTranzactor()<<tranzactorSpaces<<" "<<this->intrari[i]->getData()<<dataSpaces<<" "<<this->intrari[i]->getCategorie()<<endl;
-//    }
-    for(int i = 0; i<this->intrari.size();i++){
+    for(int i = 0; i<this->intrari.size();i++){ // formats attributes for console display
         cout<<i+1<<". ";
 
         if((i+1)/10 < 1){
@@ -106,4 +100,8 @@ void user::afisareConsola() {
         }
         cout<<endl;
     }
+}
+
+void user::deleteEntry(int entry) {
+    this->intrari.erase(this->intrari.begin()+entry+1);
 }

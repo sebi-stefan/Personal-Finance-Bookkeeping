@@ -6,7 +6,7 @@
 #include <vector>
 #include<ctime>
 #include<iomanip>
-#include "intrare.h"
+#include "../headers/intrare.h"
 
 
 ostream &operator<<(ostream &os, const intrare &intrare) {

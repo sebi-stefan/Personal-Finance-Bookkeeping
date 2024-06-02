@@ -13,9 +13,10 @@ using namespace std;
 class user {
     vector<intrare*> intrari;
 public:
-    user(const string& localFilePath, const string& userName);
+    user();
     friend ostream &operator<<(ostream &os, const user &user);
     void afisareConsola();
+    void deleteEntry(int entry);
 
 };
 
