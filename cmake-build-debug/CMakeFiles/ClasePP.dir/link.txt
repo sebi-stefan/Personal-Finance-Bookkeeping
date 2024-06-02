@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/ClasePP.dir/src/main.cpp.o CMakeFiles/ClasePP.dir/src/intrare.cpp.o CMakeFiles/ClasePP.dir/src/user.cpp.o CMakeFiles/ClasePP.dir/src/util.cpp.o -o ClasePP 

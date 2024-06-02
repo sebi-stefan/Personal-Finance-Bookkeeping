@@ -11,6 +11,8 @@ void login(const string& username);
 
 void listUsernames();
 
+void saveUser(user* user);
+
 
 
 #endif //CLASEPP_UTIL_H

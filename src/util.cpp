@@ -48,3 +48,13 @@ void login(const string& username){
     }
     cout<<"username not found"<<endl;
 }
+
+void saveUser(user *user){
+    ifstream in("../user_files/LAST_USER.txt");
+    string currentUser;
+    getline(in,currentUser);
+    in.close();
+    ofstream out("../user_files/"+currentUser+".csv");
+    out<<*user;
+    out.close();
+}

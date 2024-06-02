@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/sebi/coding/c++_stuff/P2/ClasePP/cmake-build-debug",
-		"source" : "/home/sebi/coding/c++_stuff/P2/ClasePP"
+		"build" : "/home/sebi/CLionProjects/PP_CPP/cmake-build-debug",
+		"source" : "/home/sebi/CLionProjects/PP_CPP"
 	},
 	"version" : 
 	{

@@ -7,11 +7,15 @@
 using namespace std;
 int main(int argc, char **argv) {
 
-    login(argv[1]);
+    // login(argv[1]);
 //    listUsernames();
     user *u = new user();
-    listUsernames();
-    u->afisareConsola();
+    u->addEntry(-10,"cineva", "02.06.2024", "mancare");
+    saveUser(u);
+
+
+    // listUsernames();
+    // u->afisareConsola();
 //    switch ()
 //    cout<<argc<<endl;
 //    for(int i =0;i<argc;i++){

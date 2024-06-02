@@ -28,7 +28,7 @@ user::user() { //user from csv file
 
 ostream &operator<<(ostream &os, const user &user) { // scriere user csv style
     for(intrare* e: user.intrari){
-        cout<<*e;
+        os<<*e;
     }
     return os;
 }
@@ -102,6 +102,21 @@ void user::afisareConsola() {
     }
 }
 
+void user::addEntry(double suma, string tranzactor, string data, string categorie){
+    if(suma > 0){
+        intrare *i = new intrare("venit", suma, tranzactor, data, categorie);
+        this->intrari.push_back(i);
+    }
+    else{
+        intrare *i = new intrare("cheltuiala", suma, tranzactor, data, categorie);
+        this->intrari.push_back(i);
+    }
+
+}
+
 void user::deleteEntry(int entry) {
     this->intrari.erase(this->intrari.begin()+entry+1);
 }
+
+
+
