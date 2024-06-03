@@ -1,6 +1,0 @@
--login <username>
--lu #list usernames
--add <->*<suma> <tranzactor> <data[dd.mm.yyy]> <categorie>
--delete <entry number>
--ls (-<attribute> <attribute-keyword>)*
-
