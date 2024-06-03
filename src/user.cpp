@@ -1,9 +1,5 @@
-//
-// Created by sebi on 24.05.2024.
-//
 #include<iostream>
 #include<fstream>
-#include <iomanip>
 #include <cmath>
 #include "../headers/user.h"
 

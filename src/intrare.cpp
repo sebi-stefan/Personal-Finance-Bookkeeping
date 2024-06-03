@@ -1,6 +1,3 @@
-//
-// Created by sebi on 23.05.2024.
-//
 
 #include <sstream>
 #include <vector>

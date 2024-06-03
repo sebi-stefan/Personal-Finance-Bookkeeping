@@ -1,6 +1,3 @@
-//
-// Created by sebi on 24.05.2024.
-//
 #include<vector>
 #include <ostream>
 #include"intrare.h"
