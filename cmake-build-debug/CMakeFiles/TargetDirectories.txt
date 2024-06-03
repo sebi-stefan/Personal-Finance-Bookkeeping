@@ -1,3 +1,0 @@
-/home/sebi/coding/c++_stuff/P2/ClasePP/cmake-build-debug/CMakeFiles/ClasePP.dir
-/home/sebi/coding/c++_stuff/P2/ClasePP/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sebi/coding/c++_stuff/P2/ClasePP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
