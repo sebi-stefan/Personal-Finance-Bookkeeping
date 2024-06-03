@@ -7,7 +7,7 @@
 #include "../headers/util.h"
 
 void listUsernames(){
-    ifstream in("../user_files/LAST_USER.txt"); //getting current user
+    ifstream in("../user_files/current_user.txt"); //getting current user
     string currentUser;
 
     string path = "../user_files"; //directory of usernames
@@ -39,7 +39,7 @@ void login(const string& username){
 
         if(entry.path().string().find(username+".csv") != string::npos){ //if found, logs into specified username
 
-            ofstream f("../user_files/LAST_USER.txt"); //puts username as current username
+            ofstream f("../user_files/current_user.txt"); //puts username as current username
             f<<username;
             f.close();
             cout<<"logged in as: "<<username<<endl;
@@ -50,7 +50,7 @@ void login(const string& username){
 }
 
 void saveUser(user *user){
-    ifstream in("../user_files/LAST_USER.txt");
+    ifstream in("../user_files/current_user.txt");
     string currentUser;
     getline(in,currentUser);
     in.close();

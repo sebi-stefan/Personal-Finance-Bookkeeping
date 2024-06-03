@@ -4,10 +4,11 @@
 #include<iostream>
 #include<fstream>
 #include <iomanip>
+#include <cmath>
 #include "../headers/user.h"
 
 user::user() { //user from csv file
-    ifstream f("../user_files/LAST_USER.txt");
+    ifstream f("../user_files/current_user.txt");
     string currentUser;
     getline(f, currentUser);
     string userFilePath = "../user_files/" + currentUser + ".csv";
@@ -33,7 +34,7 @@ ostream &operator<<(ostream &os, const user &user) { // scriere user csv style
     return os;
 }
 
-void user::afisareConsola() {
+vector<string> user::intrariToString() {
     unsigned int maxLengthTip = 0;
     unsigned int maxLengthSuma = 0;
     unsigned int maxLengthTranzactor = 0;
@@ -56,50 +57,58 @@ void user::afisareConsola() {
             maxLengthCategorie = e->getCategorie().size();
         }
     }
-
+    vector<string> intrariString;
     for(int i = 0; i<this->intrari.size();i++){ // formats attributes for console display
-        cout<<i+1<<". ";
+        string intrareString;
+        intrareString.append(to_string(i+1)).append(". ");
+
 
         if((i+1)/10 < 1){
-            cout<<" ";
+            intrareString.append(" ");
+
         }
 
         unsigned int tipDifference = maxLengthTip - this->intrari[i]->getTip().size();
-        cout<<this->intrari[i]->getTip()<<"  ";
+        intrareString.append(this->intrari[i]->getTip()).append("  ");
         while(tipDifference > 0){
-            cout<<" ";
+            intrareString.append(" ");
             tipDifference--;
         }
 
         unsigned int sumaDifference = maxLengthSuma - to_string(this->intrari[i]->getSuma()).size();
-        cout<<fixed<<setprecision(2)<<this->intrari[i]->getSuma()<<"  ";
+        intrareString.append(to_string(round(this->intrari[i]->getSuma() * 100.0)/100.0)).pop_back();
+        intrareString.pop_back();intrareString.pop_back();intrareString.pop_back();
+        intrareString.append("  ");
         while(sumaDifference > 0){
-            cout<<" ";
+            intrareString.append(" ");
             sumaDifference--;
         }
 
         unsigned int tranzactorDifference = maxLengthTranzactor - this->intrari[i]->getTranzactor().size();
-        cout<<this->intrari[i]->getTranzactor()<<"  ";
+        intrareString.append(this->intrari[i]->getTranzactor()).append("  ");
         while(tranzactorDifference > 0){
-            cout<<" ";
+            intrareString.append(" ");
             tranzactorDifference--;
         }
 
         unsigned int dataDifference = maxLengthData - this->intrari[i]->getData().size();
-        cout<<this->intrari[i]->getData()<<"  ";
+        intrareString.append(this->intrari[i]->getData()).append("  ");
         while(dataDifference > 0){
-            cout<<" ";
+            intrareString.append(" ");
             dataDifference--;
         }
 
         unsigned int categorieDifference = maxLengthCategorie - this->intrari[i]->getCategorie().size();
-        cout<<this->intrari[i]->getCategorie()<<"  ";
+        intrareString.append(this->intrari[i]->getCategorie()).append("  ");
         while(categorieDifference > 0){
-            cout<<" ";
+            intrareString.append(" ");
             categorieDifference--;
         }
-        cout<<endl;
+        intrareString.append("\n");
+        intrariString.push_back(intrareString);
+
     }
+    return intrariString;
 }
 
 void user::addEntry(double suma, string tranzactor, string data, string categorie){

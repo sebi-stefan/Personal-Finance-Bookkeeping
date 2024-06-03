@@ -10,22 +10,22 @@ int main(int argc, char **argv) {
     // login(argv[1]);
 //    listUsernames();
     user *u = new user();
-    u->addEntry(-10,"cineva", "02.06.2024", "mancare");
-    saveUser(u);
+    vector<string> idk = u->intrariToString();
+    for(string e: idk){
+        cout<<e;
+    }
+
+//    if(argc < 2){
+//        cout<<"help function";
+//    }
+//    else if(string(argv[1]) == "-login" && argc == 3){
+//        login(argv[2]);
+//    }
+//    else if(string(argv[1]) == "-lu" && argc == 2){
+//        listUsernames();
+//    }
 
 
-    // listUsernames();
-    // u->afisareConsola();
-//    switch ()
-//    cout<<argc<<endl;
-//    for(int i =0;i<argc;i++){
-//        cout<<argv[i]<<endl;
-//    }
-//    vector<int>numere = {1,2,3,4,5,6,7,8,9};
-//    numere.erase(numere.begin()+3);
-//    for(int e:numere){
-//        cout<<e<<" ";
-//    }
 }
 
 

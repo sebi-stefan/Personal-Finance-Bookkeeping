@@ -15,7 +15,7 @@ class user {
 public:
     user();
     friend ostream &operator<<(ostream &os, const user &user);
-    void afisareConsola();
+    vector<string> intrariToString();
     void addEntry(double suma, string tranzactor, string data, string categorie);
     void deleteEntry(int entry);
 };
