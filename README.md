@@ -10,7 +10,7 @@ Clone or extract folder and run main.exe file for further help about arguments a
 
 ## Usage
 
-Usage: <exe> [command] [options]\
+Usage: /main.exe [command] [options]\
 Commands:\
   -lu                      List all usernames\
   -ls                      List all entries for the current user\
